@@ -10,7 +10,7 @@ Helps to keep track of all current players in the system
 2) Details Page:
 * Form to add new player or edit existing player
 
-# Tools & Technologies Used
+## Tools & Technologies Used
 
 * Visual Studio 2017 
 * Front end in Angular 5, Bootstrap, HTML and CSS
