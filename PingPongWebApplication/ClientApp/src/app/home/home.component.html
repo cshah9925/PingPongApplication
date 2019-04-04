@@ -1,0 +1,33 @@
+<h2>Ping Pong Players List</h2>
+<hr />
+<p *ngIf="!playerList"><em>Loading...</em></p>
+
+<p>
+  <a [routerLink]="['/add-player']" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Player</a>
+</p>
+<table class='table' *ngIf="playerList">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Skill Level</th>
+      <th>Email Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of playerList">
+      <td>{{ player.firstName }}</td>
+      <td>{{ player.lastName }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.skillLevel }}</td>
+      <td>{{ player.email }}</td>
+      <td>
+        <a [routerLink]="['/edit-player', player.id]" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+        <a [routerLink]="" (click)="deleteDialog(player.id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<confimation-dialog #dialog [message]="'Are you sure you want to remove this player?'" (onConfirm)="delete()"></confimation-dialog>

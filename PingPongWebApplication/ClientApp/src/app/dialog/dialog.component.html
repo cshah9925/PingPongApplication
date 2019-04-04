@@ -1,0 +1,12 @@
+<div *ngIf="isOpen" class="blocking-layer">
+  <div class="dialog">
+    <h2>Confirm</h2>
+    <div>
+      {{message}}
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="confirm()">Yes</button>
+      <button class="btn btn-danger" (click)="close()">No</button>
+    </div>
+  </div>
+</div>
